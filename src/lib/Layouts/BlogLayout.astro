@@ -1,0 +1,42 @@
+---
+import CopyLink from "../Components/CopyLink.astro";
+import DarkNavbar from "../Components/Navbar.astro";
+import "../../app.css";
+import Back from "../Components/Back.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+    <meta name="description" content={frontmatter.desc} />
+  </head>
+  <body class="bg-[#16161A] text-custom-2">
+    <DarkNavbar />
+    <main
+      class="max-w-[800px] mx-auto px-6 my-6 prose prose-invert prose-a:text-custom-1 prose-strong:font-bold prose-headings:font-bold prose-img:w-full"
+    >
+      <div class="my-2 flex gap-2 items-center justify-between">
+        <Back />
+        <small class="text-custom-1"
+          >By {frontmatter.author} | {frontmatter.date}</small
+        >
+        <CopyLink />
+      </div>
+      <img src={frontmatter.cover} alt="" class="max-h-60 rounded" />
+      <h1 class="my-4">{frontmatter.title}</h1>
+      <p>{frontmatter.desc}</p>
+      <hr class="mt-6" />
+      <slot />
+      <div class="flex gap-4 my-0 items-center">
+        <Back />
+        <CopyLink />
+      </div>
+    </main>
+  </body>
+</html>
