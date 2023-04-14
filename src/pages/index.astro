@@ -1,6 +1,5 @@
 ---
 import Article from "../lib/Components/Article.astro";
-import NewsletterSignup from "../lib/Components/NewsletterSignup.astro";
 import MainLayout from "../lib/Layouts/MainLayout.astro";
 
 const articles = [
@@ -62,7 +61,7 @@ const articles = [
         <a
           href="https://forms.gle/Qf1V4tQgRyRe2AbP6"
           target="_blank"
-          class="px-3 py-2 bg-neutral-800 hover:bg-neutral-700 text-slate-50 rounded flex items-center gap-2"
+          class="px-3 py-2 border-2 border-neutral-800 hover:bg-neutral-800 text-slate-50 rounded flex items-center gap-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +99,7 @@ const articles = [
       </svg>
       <h2 class="font-bold text-2xl text-slate-50">Latest Articles</h2>
     </div>
-    <div class="flex gap-6">
+    <div class="grid md:grid-cols-2 gap-6">
       {
         articles.map((article) => {
           return (
@@ -113,6 +112,11 @@ const articles = [
           );
         })
       }
+      <div
+        class="border-2 border-neutral-800 rounded-lg grid place-items-center font-bold py-6"
+      >
+        <p>Coming soon...</p>
+      </div>
     </div>
   </section>
 </MainLayout>

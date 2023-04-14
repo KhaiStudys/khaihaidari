@@ -1,6 +1,6 @@
 ---
 import CopyLink from "../Components/CopyLink.astro";
-import DarkNavbar from "../Components/Navbar.astro";
+import Navbar from "../Components/Navbar.astro";
 import "../../app.css";
 import Back from "../Components/Back.astro";
 
@@ -17,7 +17,7 @@ const { frontmatter } = Astro.props;
     <meta name="description" content={frontmatter.desc} />
   </head>
   <body class="bg-[#16161A] text-custom-2">
-    <DarkNavbar />
+    <Navbar />
     <main
       class="max-w-[800px] mx-auto px-6 my-6 prose prose-invert prose-a:text-custom-1 prose-strong:font-bold prose-headings:font-bold prose-img:w-full"
     >
